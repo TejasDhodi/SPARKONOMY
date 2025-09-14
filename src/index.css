@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+
+@theme {
+  --color-head-bg: #E6CDE9;
+  --color-commonGray: #F2F2F2;
+  --color-primary-purple: #8134AF;
+  --color-primary-gray: #999999;
+  --background-image-primaryGradient: linear-gradient(169.7deg, #DD2A7B 1.49%, #9747FF 42.07%, #334CCA 99.84%);
+  --background-image-backgroundGradient: linear-gradient(159.79deg, rgba(221, 42, 123, 0.05) -5.47%, rgba(151, 71, 255, 0.05) 74.41%, rgba(51, 76, 202, 0.05) 147%);
+
+} 
