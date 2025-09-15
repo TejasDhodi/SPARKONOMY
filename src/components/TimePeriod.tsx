@@ -1,10 +1,10 @@
 import { CalendarDays } from 'lucide-react';
-import React from 'react';
+import {useEffect, useState} from 'react';
 
 const TimePeriod = () => {
-    const [selectedPeriod, setSelectedPeriod] = React.useState<string | null>(null);
-    const [startDate, setStartDate] = React.useState<string>('');
-    const [endDate, setEndDate] = React.useState<string>('');
+    const [selectedPeriod, setSelectedPeriod] = useState<string | null>(null);
+    const [startDate, setStartDate] = useState<string>('');
+    const [endDate, setEndDate] = useState<string>('');
 
     const today = new Date();
 
@@ -12,7 +12,7 @@ const TimePeriod = () => {
         return date.toISOString().split('T')[0];
     };
 
-    const handlePeriodSelect = (period: string) => {
+    const handlePeriodSelect = (period: string = '1M') => {
         const start: Date = new Date();
 
         switch (period) {
@@ -38,6 +38,10 @@ const TimePeriod = () => {
             setEndDate(formatDate(today));
         }
     };
+
+    useEffect(() => {
+        handlePeriodSelect('1M')
+    }, [])
 
     return (
         <div className='w-full mx-auto h-auto rounded-[16px] p-2 border border-[#F2F2F2]'>
