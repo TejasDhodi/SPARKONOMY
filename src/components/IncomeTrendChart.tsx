@@ -9,7 +9,8 @@ import {
   CategoryScale,
   LinearScale,
   LineElement,
-  PointElement
+  PointElement,
+  LineController, 
 } from "chart.js";
 
 ChartJS.register(
@@ -20,12 +21,12 @@ ChartJS.register(
   CategoryScale,
   LinearScale,
   LineElement,
-  PointElement
+  PointElement,
+  LineController
 );
 
 const IncomeTrendChart: React.FC = () => {
-
-  const chartRef = useRef<ChartJS<"bar"> | null>(null);
+  const chartRef = useRef<ChartJS<"bar" | "line"> | null>(null); 
 
   const data = {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
