@@ -56,11 +56,11 @@ const Invoices = () => {
         : invoiceData.filter(invoice => invoice.status === filterStatus);
 
     return (
-        <div className="flex flex-col gap-2 max-w-md mx-auto">
+        <div className="flex flex-col gap-2 max-w-md lg:max-w-[70%] mx-auto mb-[50px]">
 
             <div className="flex items-center justify-between mb-4 relative">
                 <h2
-                    className="text-base font-semibold cursor-pointer w-full flex items-center justify-between"
+                    className="text-base lg:text-2xl font-semibold cursor-pointer w-full flex items-center justify-between"
                     onClick={() => setFilterOpen(!filterOpen)}
                 >
                     <span className='text-primary-gray'>Your Invoices </span>
@@ -68,10 +68,10 @@ const Invoices = () => {
                 </h2>
 
                 {filterOpen && (
-                    <div className="absolute top-8 left-0 z-10 bg-white border rounded shadow w-40">
+                    <div className="w-full absolute top-8 left-0 z-10 bg-white border rounded shadow w-40">
                         <ul className="text-sm">
                             <li
-                                className={`cursor-pointer px-4 py-2 hover:bg-gray-100 ${filterStatus === "All" ? "font-semibold" : ""}`}
+                                className={`cursor-pointer border-b-1 border-b-commonGray px-4 py-2 hover:bg-gray-100 ${filterStatus === "All" ? "font-semibold" : ""}`}
                                 onClick={() => { setFilterStatus("All"); setFilterOpen(false); }}
                             >
                                 All
@@ -79,7 +79,7 @@ const Invoices = () => {
                             {statusOptions.map(status => (
                                 <li
                                     key={status}
-                                    className={`cursor-pointer px-4 py-2 hover:bg-gray-100 ${filterStatus === status ? "font-semibold" : ""}`}
+                                    className={`cursor-pointer px-4 border-b-1 border-b-commonGray py-2 hover:bg-gray-100 ${filterStatus === status ? "font-semibold" : ""}`}
                                     onClick={() => { setFilterStatus(status); setFilterOpen(false); }}
                                 >
                                     {status}
@@ -103,8 +103,8 @@ const Invoices = () => {
                             className="rounded-xl p-4 border border-gray-200 flex justify-between items-center shadow-sm bg-white"
                         >
                             <div>
-                                <p className="text-[#6B7280] font-medium text-sm">{ClientName}</p>
-                                <p className="text-xs text-primary-gray">₹{amount.toLocaleString()}, Due: {due}</p>
+                                <p className="text-[#6B7280] font-medium text-sm lg:text-xl">{ClientName}</p>
+                                <p className="text-xs lg:text-sm lg:mt-2 text-primary-gray">₹{amount.toLocaleString()}, Due: {due}</p>
                             </div>
 
                             <div className="relative">
@@ -114,7 +114,7 @@ const Invoices = () => {
                                         onChange={(e) =>
                                             handleStatusChange(index, e.target.value as InvoiceStatus)
                                         }
-                                        className="text-sm border border-gray-300 rounded px-2 py-1"
+                                        className="text-sm border border-gray-300 rounded px-2 py-1 cursor-pointer"
                                     >
                                         {statusOptions.map((option) => (
                                             <option key={option} value={option}>
@@ -127,7 +127,7 @@ const Invoices = () => {
                                         onClick={() => setEditIndex(index)}
                                         className='flex items-center gap-2'
                                     >
-                                        <button className={`flex items-center text-sm px-[15px] py-[9px] rounded-[24px] text-xs font-medium whitespace-nowrap ${getStatusStyle(status)}`}>
+                                        <button className={`flex items-center cursor-pointer text-sm px-[15px] py-[9px] rounded-[24px] text-xs font-medium whitespace-nowrap ${getStatusStyle(status)}`}>
                                             {status}
                                         </button>
                                         {status === 'Awaited' && <img src='/Images/bell.svg' alt="bell" />}

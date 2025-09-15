@@ -6,7 +6,7 @@ import Invoices from '../components/Invoices'
 
 const Index = () => {
   return (
-    <div className='bg-white w-full rounded-[46px] py-6 px-4'>
+    <div className='bg-white w-full rounded-tl-[46px] rounded-tr-[46px] py-6 px-4'>
       <CreateInvoice />
       <TimePeriod />
       <Revenue />
