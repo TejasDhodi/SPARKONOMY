@@ -1,4 +1,3 @@
-import React from 'react'
 import CreateInvoice from '../components/CreateInvoice'
 import TimePeriod from '../components/TimePeriod'
 import Revenue from '../components/Revenue'

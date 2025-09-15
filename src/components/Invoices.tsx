@@ -1,5 +1,5 @@
 import { Pencil } from 'lucide-react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 type InvoiceStatus = "Paid" | "Unpaid" | "Disputed" | "Partially Paid" | "Overdue" | "Awaited" | "Draft";
 

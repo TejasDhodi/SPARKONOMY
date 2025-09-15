@@ -1,5 +1,3 @@
-import React from "react";
-
 const Footer = () => {
   return (
     <div className="bg-white w-full flex relative items-center justify-center p-5 pb-[50px]">

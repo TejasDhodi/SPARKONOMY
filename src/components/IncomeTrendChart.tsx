@@ -88,6 +88,7 @@ const IncomeTrendChart: React.FC = () => {
         Your monthly income and growth for the last 6 months.
       </p>
       <div className="w-full h-[auto] sm:h-[auto] lg:h-[500px] flex justify-center">
+        {/* @ts-expect-error: Ignoring TypeScript error due to missing types for ChartJS props */}
         <Bar ref={chartRef} data={data} options={options} />
       </div>
     </div>
